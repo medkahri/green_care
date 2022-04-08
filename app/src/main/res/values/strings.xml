@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SmartAg</string>
+    <string name="facebook_app_id">308887360789793</string>
+    <string name="fb_login_protocol_scheme">fb308887360789793</string>
+    <string name="facebook_application_id">308887360789793</string>
+    <string name="tempString">Temperature :</string>
+    <string name="humString">Humidity :</string>
+
+
+</resources>

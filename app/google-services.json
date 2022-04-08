@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "717745665394",
+    "project_id": "aquaponic-84dd7",
+    "storage_bucket": "aquaponic-84dd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717745665394:android:8732a57b66f14a82ced9eb",
+        "android_client_info": {
+          "package_name": "com.enetcom.aquaponic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717745665394-08s26vq5f97qn7sbfae3nbffa6t1eiev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.enetcom.aquaponic",
+            "certificate_hash": "9297b01b5f57f3181f97874880c06905d8c0a128"
+          }
+        },
+        {
+          "client_id": "717745665394-mohauqsi2drdcm136r8p2l4dkl82f6dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLv8eS924ssIvMcZqJbnDaf3xewf0A5ys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717745665394-mohauqsi2drdcm136r8p2l4dkl82f6dg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
