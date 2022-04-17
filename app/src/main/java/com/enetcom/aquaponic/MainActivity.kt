@@ -1,18 +1,13 @@
 package com.enetcom.aquaponic
 
-import android.content.ContentValues.TAG
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil.setContentView
+import androidx.appcompat.app.AppCompatActivity
 import com.enetcom.aquaponic.databinding.ActivityMainBinding
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
-
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
@@ -42,6 +37,11 @@ class MainActivity : AppCompatActivity() {
            readData("home1")
 
        }
+       binding.aiButton.setOnClickListener {
+           val intent = Intent(this, SecondActivity::class.java)
+           startActivity(intent)
+       }
+
        var getdata = object : ValueEventListener{
            override fun onCancelled(p0 : DatabaseError){}
 
@@ -53,9 +53,6 @@ class MainActivity : AppCompatActivity() {
                    var hum = i.child("hum").getValue()
                    tp.append("$temp")
                    hm.append("$hum")
-
-
-
 
                }
                binding.humText.setText(hm)

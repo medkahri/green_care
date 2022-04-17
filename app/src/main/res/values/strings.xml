@@ -5,6 +5,11 @@
     <string name="facebook_application_id">308887360789793</string>
     <string name="tempString">Temperature :</string>
     <string name="humString">Humidity :</string>
+    <string name="buttonSelectPhoto">Select Photo</string>
+    <string name="buttonTakePhoto">Take Photo</string>
+    <string name="descriptionImage">description</string>
+    <string name="buttonDiagnose">Diagnose B</string>
+    <string name="defaultImage">default img</string>
 
 
 </resources>
