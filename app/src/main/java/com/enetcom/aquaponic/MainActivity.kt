@@ -8,30 +8,29 @@ import com.enetcom.aquaponic.databinding.ActivityMainBinding
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
      lateinit var database : DatabaseReference
      val DataBase = Firebase.database
-     val Myref = DataBase.getReference("house1")
-
-
-
-
-
-
-
+     val Myref = DataBase.getReference("home1")
+     var tempe = ""
+     var humi = ""
+    val cl = 0 ;
 
    override fun onCreate(savedInstanceState: Bundle?) {
        super.onCreate(savedInstanceState)
        setContentView(R.layout.activity_main)
        binding = ActivityMainBinding.inflate(layoutInflater)
        setContentView(binding.root)
-
-
-
-
+       binding.switch1.setOnClickListener{
+           if (switch1.isChecked)
+               Myref.child("climat").setValue(1)
+           else
+               Myref.child("climat").setValue(0)
+       }
        binding.readDataBtn.setOnClickListener {
 
            readData("home1")
@@ -55,25 +54,20 @@ class MainActivity : AppCompatActivity() {
                    hm.append("$hum")
 
                }
-               binding.humText.setText(hm)
-               binding.tempText.setText(tp)
+               tempe = tp.toString().plus("°C")
+               humi = hm.toString().plus(" %")
+
+               binding.humText.setText(humi)
+               binding.tempText.setText(tempe)
 
 
            }
-
-
-
-
-   }
+       }
        database = FirebaseDatabase.getInstance().getReference()
        database.addValueEventListener(getdata)
        database.addListenerForSingleValueEvent(getdata)
-
-
    }
-
-
-       fun readData(houseName: String) {
+    fun readData(houseName: String) {
 
             database = FirebaseDatabase.getInstance().getReference()
             database.child(houseName).get().addOnSuccessListener {
@@ -87,25 +81,16 @@ class MainActivity : AppCompatActivity() {
 
                     binding.tempText.text = temper.toString()
                     binding.humText.text = humid.toString()
-
-
                 }else{
 
                     Toast.makeText(this,"Error retreiving data",Toast.LENGTH_SHORT).show()
-
-
                 }
 
             }.addOnFailureListener{
 
                 Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
 
-
             }
     }
-
-
-
-
 
 }

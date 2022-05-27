@@ -3,48 +3,91 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tempuu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgroundo"
-        android:orientation="vertical"
         android:visibility="visible">
 
-        <Button
-            android:id="@+id/readDataBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Refresh Data"
-            android:textAlignment="center" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="383dp"
+            android:layout_height="37dp"
+            android:text="Conditions météorologiques :"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.328" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="303dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="44dp"
+            android:text="Activer le climatiseur"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/readDataBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="288dp"
             android:text="@string/tempString"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tempText"
-            android:layout_width="184dp"
-            android:layout_height="160dp"
+            android:layout_width="75dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="288dp"
             android:text="temp"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.074"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:text="@string/humString"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.148" />
 
         <TextView
             android:id="@+id/humText"
-            android:layout_width="169dp"
-            android:layout_height="141dp"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
             android:text="hum"
-            android:textSize="30sp" />
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/tempText"
+            app:layout_constraintVertical_bias="0.012" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -52,10 +95,54 @@
             android:layout_height="wrap_content" />
 
         <Button
+            android:id="@+id/readDataBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh Data"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.784" />
+
+        <Button
             android:id="@+id/aiButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Disease detection" />
+            android:text="Disease detection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/readDataBtn"
+            app:layout_constraintVertical_bias="0.292" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="44dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="262dp"
+            android:layout_marginBottom="413dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.738"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tempicon" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="52dp"
+            android:layout_height="46dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.754"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499"
+            app:srcCompat="@drawable/humicon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
